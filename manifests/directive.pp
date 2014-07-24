@@ -78,7 +78,7 @@ define sudo::directive (
       exec { "sudo-syntax-check for file ${dname}":
         command     => "visudo -c -f ${base_name} || ( mv -f ${base_name} ${base_name}.broken && exit 1 )",
         refreshonly => true,
-        path        => '/bin:/usr/bin:/sbin:/usr/sbin',
+        path        => '/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/sbin',
       }
     }
 
